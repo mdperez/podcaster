@@ -1,6 +1,6 @@
 require(['assets/js/text!header.html'], function (headerTpl) {
-
-	var ApplicationRouter = Backbone.Router.extend({
+	//EventBus = _.extend({}, Backbone.Events);
+	ApplicationRouter = Backbone.Router.extend({
 		routes: {
 			"": "podcastList",
 			"*actions": "podcastList"
@@ -8,22 +8,13 @@ require(['assets/js/text!header.html'], function (headerTpl) {
 		initialize: function() {
 			this.headerView = new HeaderView();
 			this.headerView.render();
+			this.podcastCollection = new PodcastCollection();
 		},
 		podcastList: function() {
 			this.podcastListView = new PodcastListView();
 			this.podcastListView.render();
 		}
 	});
-
-	HeaderView = Backbone.View.extend({
-		el: "#header",
-		template: headerTpl,
-		initialize: function() {},
-		render: function() {
-			$(this.el).html(_.template(this.template));
-		}
-	});
-
 	app = new ApplicationRouter();
 	Backbone.history.start();
 });
