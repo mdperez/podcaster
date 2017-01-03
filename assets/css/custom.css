@@ -1,5 +1,17 @@
 body {
-	padding-top: 100px;
+	padding-top: 50px;
+}
+
+.podcastListHeader {
+	margin: 35px 0;
+}
+
+.podcastListHeader .podcastFilter {
+		text-align: right;
+}
+
+.podcastListHeader .podcastFilter .inlineLabel {
+	display: inline-block;
 }
 
 .podcast {
@@ -35,4 +47,57 @@ body {
 
 .podcast .podcastContainer .artist {
 	font-weight: bold;
+}
+
+.podcastDetailWrapper {
+	margin-top: 35px;
+}
+
+.widget {
+	border-radius: 5px;
+	margin-bottom: 20px;
+	padding: 15px;
+	-webkit-box-shadow: 0px 0px 4px 2px rgba(217,217,217,1);
+	-moz-box-shadow: 0px 0px 4px 2px rgba(217,217,217,1);
+	box-shadow: 0px 0px 4px 2px rgba(217,217,217,1);
+}
+
+.widget .podcastImage {
+	margin: 20px 0;
+	text-align: center;
+}
+
+.widget .podcastImage > img {
+	max-width: 100%;
+	border-radius: 8px;
+}
+
+.widget .podcastInfo {
+	border-top: 1px solid #F3F3F3;
+	border-bottom: 1px solid #F3F3F3;
+	padding: 20px 0;
+	margin: 20px 0;
+}
+
+.widget .podcastInfo .name {
+	font-weight: bold;
+}
+
+.widget .podcastInfo .artist {
+	font-style: italic;
+	font-size: 13px;
+}
+
+.widget .podcastDescription {
+	margin: 20px 0;
+}
+
+.widget .podcastDescription .title {
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.widget .podcastDescription .description {
+	font-size: 13px;
+	font-style: italic;
 }

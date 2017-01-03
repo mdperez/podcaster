@@ -10,7 +10,8 @@ PodcastModel = Backbone.Model.extend({
          id: data.id.attributes["im:id"],
          image: data["im:image"][2].label,
          name: data["im:name"].label,
-         artist: data['im:artist'].label
+         artist: data['im:artist'].label,
+         summary: data.summary ? data.summary.label : ""
       };
       return podcast;
    }

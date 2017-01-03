@@ -1,0 +1,7 @@
+<ifModule mod_rewrite.c>
+  RewriteEngine On
+  # HTML5 pushstate support
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule (.*) index.html [L]
+</ifModule>
