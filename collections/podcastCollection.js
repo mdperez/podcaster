@@ -7,7 +7,7 @@ PodcastCollection = Backbone.Collection.extend({
          //guardamos en localStorage
       });
    },
-   parse: function (data) {
+   parse: function(data) {
       return data.feed.entry;
    }
 });

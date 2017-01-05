@@ -17,14 +17,5 @@ PodcastDetailWrapperView = Backbone.View.extend({
 	},
 	render: function(id) {
 		$(this.el).html(_.template(this.template)({podcast : app.podcastCollection.get(id)}));
-		/*$.ajax({
-			context: this,
-			type: 'GET',
-			url : "https://cors-anywhere.herokuapp.com/https://itunes.apple.com/lookup?id=" + id,
-			success : function(result) {
-				console.log(result);
-			},
-			dataType: 'json'
-		});*/
 	}
 });

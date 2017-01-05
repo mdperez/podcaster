@@ -1,0 +1,23 @@
+<div class="widget">
+   <div class="episodesHeading">Episodes: <%= episodesList.models.length %></div>
+</div>
+<div class="widget">
+   <table class="table table-striped">
+      <thead>
+         <tr>
+            <th>Title</th>
+            <th>Date</th>
+            <th>Duration</th>
+         </tr>
+      </thead>
+      <tbody>
+         <% _.each(episodesList.models, function(episode) { %>
+            <tr>
+               <td><a href="/episodes/<%= episode.attributes.id %>"><%= episode.attributes.title %></a></td>
+               <td><%= episode.attributes.date %></td>
+               <td><%= episode.attributes.duration %></td>
+            </tr>
+         <% }); %>
+      </tbody>
+   </table>
+</div>

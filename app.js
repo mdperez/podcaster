@@ -15,6 +15,7 @@ ApplicationRouter = Backbone.Router.extend({
 	},
 	podcastDetail: function(podcastId) {
 		this.podcastListView = new PodcastDetailWrapperView(podcastId);
+		this.podcastListView = new PodcastDetailView(podcastId);
 		//cargar episodios en detailContent
 	},
 	episodeDetail: function(podcastId, episodeId) {
