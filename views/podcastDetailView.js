@@ -43,8 +43,10 @@ PodcastDetailView = Backbone.View.extend({
 				this.episodeCollection = new EpisodeCollection(result, {parse: true});
 				if (this.episodeId) {
 					$(this.el).html(_.template(this.template)({episode: this.episodeCollection.get(this.episodeId)}));
+					$("body").removeClass("loading");
 				} else {
 					$(this.el).html(_.template(this.template)({episodesList: this.episodeCollection, id: this.podcastId}));
+					$("body").removeClass("loading");
 				}
 			},
 			dataType: 'xml'

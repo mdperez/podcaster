@@ -2,6 +2,29 @@ body {
 	padding-top: 50px;
 }
 
+.navbar {
+	background-color: #FFFFFF;
+}
+
+.navbar .navbar-brand {
+	color: #337ab7;
+}
+
+.navbar .loading {
+	float: right;
+	padding-top: 13px;
+	display: none;
+}
+
+body.loading .navbar .loading {
+	display: block;
+}
+
+.navbar .navbar-brand:hover {
+	color: #23527c;
+	text-decoration: underline;
+}
+
 .podcastListHeader {
 	margin: 35px 0;
 }

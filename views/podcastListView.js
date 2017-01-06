@@ -3,6 +3,7 @@ PodcastListView = Backbone.View.extend({
 	templateUrl: "templates/podcastList.html",
 	template: null,
 	initialize: function() {
+		$("body").addClass("loading");
 		$.ajax({
 			context: this,
 			async : false,
@@ -38,7 +39,8 @@ PodcastListView = Backbone.View.extend({
 			);
 			if (index%4 === 3) $(self.el).find("#podcastList").append("</div>");
 		});
-		$(self.el).find(".podcast").off("click").on("click", _.bind(self.goPodcastDetail,self));
+		$("body").removeClass("loading");
+		$(this.el).find(".podcast").off("click").on("click", _.bind(this.goPodcastDetail,self));
 	},
 	filterPodcast: function() {
 		var filter = $(this.el).find("#inputPodcastFilter").val();

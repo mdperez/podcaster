@@ -3,6 +3,7 @@ PodcastDetailWrapperView = Backbone.View.extend({
 	templateUrl: "templates/podcastDetailWrapper.html",
 	template: null,
 	initialize: function(podcastId, episodeId) {
+		$("body").addClass("loading");
 		$.ajax({
 			context: this,
 			async : false,
