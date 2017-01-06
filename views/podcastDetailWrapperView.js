@@ -13,6 +13,9 @@ PodcastDetailWrapperView = Backbone.View.extend({
 				this.template = result;
 				this.render(podcastId, episodeId);
 			},
+			error: function(error) {
+        		console.log(error);
+       	},
 			dataType: 'html'
 		});
 	},

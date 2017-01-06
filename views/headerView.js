@@ -12,6 +12,9 @@ HeaderView = Backbone.View.extend({
 				this.template = result;
 				this.render();
 			},
+			error: function(error) {
+        		console.log(error);
+       	},
 			dataType: 'html'
 		});
 	},
