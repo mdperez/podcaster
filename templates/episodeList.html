@@ -13,7 +13,7 @@
       <tbody>
          <% _.each(episodesList.models, function(episode) { %>
             <tr>
-               <td><a href="/episodes/<%= episode.attributes.id %>"><%= episode.attributes.title %></a></td>
+               <td><a href="/podcast/<%= id %>/episode/<%= episode.attributes.id %>"><%= episode.attributes.title %></a></td>
                <td><%= episode.attributes.date %></td>
                <td><%= episode.attributes.duration %></td>
             </tr>

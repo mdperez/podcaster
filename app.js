@@ -2,8 +2,7 @@
 ApplicationRouter = Backbone.Router.extend({
 	routes: {
 		"": "podcastList",
-		"podcast/:id": "podcastDetail",
-		"podcast/:id/episode/:episodeId": "episodeDetail",
+		"podcast/:id(/episode/:episodeId)": "podcastDetail",
 		"*actions": "podcastList"
 	},
 	initialize: function() {
@@ -13,15 +12,17 @@ ApplicationRouter = Backbone.Router.extend({
 	podcastList: function() {
 		this.podcastListView = new PodcastListView();
 	},
-	podcastDetail: function(podcastId) {
-		this.podcastListView = new PodcastDetailWrapperView(podcastId);
-		this.podcastListView = new PodcastDetailView(podcastId);
-		//cargar episodios en detailContent
-	},
-	episodeDetail: function(podcastId, episodeId) {
-		this.podcastListView = new PodcastDetailWrapperView(podcastId);
-		//cargar detalle de episodio en detailContent
+	podcastDetail: function(podcastId, episodeId) {
+		this.podcastDetailWrapperView = new PodcastDetailWrapperView(podcastId);
+		this.podcastDetailView = new PodcastDetailView(podcastId, episodeId);
 	}
 });
 app = new ApplicationRouter();
 Backbone.history.start({pushState: true, root: "/podcaster/"});
+
+//link handler para pushState
+$(document).on("click", "a", function(e){
+    e.preventDefault();
+    var href = $(e.currentTarget).attr('href');
+    app.navigate(href, true);
+});

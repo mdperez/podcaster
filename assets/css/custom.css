@@ -106,3 +106,17 @@ body {
 	font-weight: bold;
 	font-size: 20px;
 }
+
+.widget .description {
+	font-style: italic;
+}
+
+.widget .player {
+	border-top: 1px solid #F3F3F3;
+	padding-top: 20px;
+	margin-top: 20px;
+}
+
+.widget .player audio {
+	width: 100%;
+}
