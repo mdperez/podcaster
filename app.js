@@ -13,7 +13,7 @@ ApplicationRouter = Backbone.Router.extend({
 		this.podcastListView = new PodcastListView();
 	},
 	podcastDetail: function(podcastId, episodeId) {
-		this.podcastDetailWrapperView = new PodcastDetailWrapperView(podcastId);
+		this.podcastDetailWrapperView = new PodcastDetailWrapperView(podcastId, episodeId);
 		this.podcastDetailView = new PodcastDetailView(podcastId, episodeId);
 	}
 });

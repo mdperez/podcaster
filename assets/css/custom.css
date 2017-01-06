@@ -67,7 +67,7 @@ body {
 	text-align: center;
 }
 
-.widget .podcastImage > img {
+.widget .podcastImage img {
 	max-width: 100%;
 	border-radius: 8px;
 }
@@ -119,4 +119,9 @@ body {
 
 .widget .player audio {
 	width: 100%;
+}
+
+.podcastLink {
+	color: #333;
+	text-decoration: none;
 }

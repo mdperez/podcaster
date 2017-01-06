@@ -3,15 +3,27 @@
       <div class="col-sm-3">
          <div class="widget">
             <div class="podcastImage">
-               <img src="<%= podcast.attributes.image %>" />
+               <% if (episodeId) { %>
+               <a class="podcastLink" href="podcast/<%= podcast.attributes.id %>">
+               <% } %>
+                  <img src="<%= podcast.attributes.image %>" />
+               <% if (episodeId) { %>
+               </a>
+               <% } %>
             </div>
             <div class="podcastInfo">
-               <div class="name">
-                  <%= podcast.attributes.name %>
-               </div>
-               <div class="artist">
-                  by <%= podcast.attributes.artist %>
-               </div>
+               <% if (episodeId) { %>
+               <a class="podcastLink" href="podcast/<%= podcast.attributes.id %>">
+               <% } %>
+                  <div class="name">
+                     <%= podcast.attributes.name %>
+                  </div>
+                  <div class="artist">
+                     by <%= podcast.attributes.artist %>
+                  </div>
+               <% if (episodeId) { %>
+               </a>
+               <% } %>
             </div>
             <div class="podcastDescription">
                <div class="title">Description:</div>

@@ -2,7 +2,7 @@ PodcastDetailWrapperView = Backbone.View.extend({
 	el: "#content",
 	templateUrl: "templates/podcastDetailWrapper.html",
 	template: null,
-	initialize: function(id) {
+	initialize: function(podcastId, episodeId) {
 		$.ajax({
 			context: this,
 			async : false,
@@ -10,12 +10,12 @@ PodcastDetailWrapperView = Backbone.View.extend({
 			url : this.templateUrl,
 			success : function(result) {
 				this.template = result;
-				this.render(id);
+				this.render(podcastId, episodeId);
 			},
 			dataType: 'html'
 		});
 	},
-	render: function(id) {
-		$(this.el).html(_.template(this.template)({podcast : app.podcastCollection.get(id)}));
+	render: function(podcastId, episodeId) {
+		$(this.el).html(_.template(this.template)({podcast : app.podcastCollection.get(podcastId), episodeId: episodeId}));
 	}
 });
